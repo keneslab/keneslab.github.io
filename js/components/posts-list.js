@@ -16,7 +16,7 @@ class PostsList extends HTMLElement {
 
     async loadPosts() {
         try {
-            const response = await fetch('workspace/contents/posts-metadata.json');
+            const response = await fetch('posts-metadata.json');
             if (!response.ok) {
                 throw new Error('Failed to load posts metadata');
             }
