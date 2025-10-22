@@ -230,6 +230,7 @@ function createTemplate(post, content) {
     <meta name="description" content="${post.description || ''}">
     <meta name="keywords" content="${post.keywords || ''}">
     <meta name="author" content="${post.author || 'KenesLab'}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="${post.title}">
@@ -325,6 +326,7 @@ function createTemplate(post, content) {
     <blog-footer></blog-footer>
 
     <!-- Web Components -->
+    <script src="js/analytics.js"></script>
     <script src="js/components/header.js"></script>
     <script src="js/components/footer.js"></script>
     <script src="js/components/company-info.js"></script>
