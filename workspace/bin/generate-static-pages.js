@@ -19,7 +19,7 @@ const METADATA_PATH = './posts-metadata.json';
 const WORKSPACE_METADATA_PATH = './workspace/contents/posts-metadata.json';
 const CONTENTS_DIR = './workspace/contents';
 const TEMPLATE_PATH = './workspace/page-template.html';
-const OUTPUT_DIR = './';  // 루트 디렉토리에 직접 생성
+const OUTPUT_DIR = './articles/';  // articles 디렉토리에 생성
 const SITEMAP_PATH = './sitemap.xml';
 const BASE_URL = 'https://keneslab.github.io';
 
@@ -217,7 +217,7 @@ function loadContent(filename) {
 // Create page template
 function createTemplate(post, content) {
     const baseUrl = BASE_URL;
-    const postUrl = `${baseUrl}/${post.route}.html`;
+    const postUrl = `${baseUrl}/articles/${post.route}.html`;
     const imageUrl = post.image ? `${baseUrl}/${post.image}` : `${baseUrl}/images/og-default.jpg`;
 
     // Load asset versions for cache busting
@@ -477,7 +477,7 @@ function generateSitemap(posts) {
     posts.forEach(post => {
         const lastmod = post.dateModified || post.date || today;
         sitemapContent += `    <url>
-        <loc>${BASE_URL}/${post.route}.html</loc>
+        <loc>${BASE_URL}/articles/${post.route}.html</loc>
         <lastmod>${lastmod}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>

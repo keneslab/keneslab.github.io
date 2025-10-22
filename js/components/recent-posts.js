@@ -13,7 +13,12 @@ class RecentPosts extends HTMLElement {
 
     async loadPosts() {
         try {
-            const response = await fetch('posts-metadata.json');
+            // 현재 경로에 따라 posts-metadata.json의 경로를 결정
+            const metadataPath = window.location.pathname.includes('/articles/')
+                ? '../posts-metadata.json'
+                : 'posts-metadata.json';
+
+            const response = await fetch(metadataPath);
             if (!response.ok) {
                 throw new Error('Failed to load posts metadata');
             }
@@ -26,7 +31,7 @@ class RecentPosts extends HTMLElement {
             this.posts = allPosts.slice(0, this.maxPosts).map(post => ({
                 title: post.title,
                 date: post.date,
-                url: post.route ? `/${post.route}.html` : '#',
+                url: post.route ? `/articles/${post.route}.html` : '#',
                 route: post.route
             }));
         } catch (error) {

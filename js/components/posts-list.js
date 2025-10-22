@@ -16,7 +16,12 @@ class PostsList extends HTMLElement {
 
     async loadPosts() {
         try {
-            const response = await fetch('posts-metadata.json');
+            // 현재 경로에 따라 posts-metadata.json의 경로를 결정
+            const metadataPath = window.location.pathname.includes('/articles/')
+                ? '../posts-metadata.json'
+                : 'posts-metadata.json';
+
+            const response = await fetch(metadataPath);
             if (!response.ok) {
                 throw new Error('Failed to load posts metadata');
             }
@@ -54,7 +59,7 @@ class PostsList extends HTMLElement {
         const currentPosts = this.getCurrentPagePosts();
 
         const postsHTML = currentPosts.map(post => {
-            const url = post.route ? `/${post.route}.html` : '#';
+            const url = post.route ? `/articles/${post.route}.html` : '#';
             return `
                 <div class="post-item">
                     <h3 class="post-title">
