@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글목록 - KenesLab Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XD3X145PND"></script>
+    <script src="js/analytics.js"></script>
+</head>
+<body>
+    <!-- Header Component -->
+    <blog-header></blog-header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="content-wrapper">
+            <!-- Article Section -->
+            <article class="main-content">
+                <h1 class="page-title">글목록</h1>
+                <posts-list></posts-list>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Company Info Component -->
+                <company-info></company-info>
+
+                <!-- Contact Component -->
+                <contact-section></contact-section>
+
+                <!-- Recent Posts -->
+                <recent-posts></recent-posts>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer Component -->
+    <blog-footer></blog-footer>
+
+    <!-- Web Components -->
+    <script src="js/components/header.js"></script>
+    <script src="js/components/footer.js"></script>
+    <script src="js/components/company-info.js"></script>
+    <script src="js/components/contact-section.js"></script>
+    <script src="js/components/recent-posts.js"></script>
+    <script src="js/components/posts-list.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>
