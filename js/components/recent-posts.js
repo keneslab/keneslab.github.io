@@ -13,7 +13,7 @@ class RecentPosts extends HTMLElement {
 
     async loadPosts() {
         try {
-            const response = await fetch('contents/posts-metadata.json');
+            const response = await fetch('workspace/contents/posts-metadata.json');
             if (!response.ok) {
                 throw new Error('Failed to load posts metadata');
             }
@@ -26,7 +26,7 @@ class RecentPosts extends HTMLElement {
             this.posts = allPosts.slice(0, this.maxPosts).map(post => ({
                 title: post.title,
                 date: post.date,
-                url: post.route ? `/${post.route}` : '#',
+                url: post.route ? `/${post.route}.html` : '#',
                 route: post.route
             }));
         } catch (error) {
@@ -46,10 +46,9 @@ class RecentPosts extends HTMLElement {
 
     render() {
         const postsHTML = this.posts.map(post => {
-            const dataRoute = post.route ? `data-route="${post.route}"` : '';
             return `
                 <li class="recent-post-item">
-                    <a href="${post.url}" ${dataRoute} class="recent-post-link">
+                    <a href="${post.url}" class="recent-post-link">
                         <h4 class="recent-post-title">${post.title}</h4>
                         <span class="recent-post-date">${this.formatDate(post.date)}</span>
                     </a>

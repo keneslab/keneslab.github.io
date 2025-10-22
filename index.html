@@ -28,6 +28,26 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://keneslab.github.io/">
 
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "KenesLab Blog",
+        "url": "https://keneslab.github.io/",
+        "description": "케네스랩의 기술 블로그. 웹 개발, 프레임워크, 프로그래밍에 대한 인사이트를 공유합니다.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "KenesLab",
+            "url": "https://keneslab.github.io/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://keneslab.github.io/images/logo.png"
+            }
+        }
+    }
+    </script>
+
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Google Tag Manager -->
@@ -51,8 +71,38 @@
     <main class="container">
         <div class="content-wrapper">
             <!-- Article Section -->
-            <article class="main-content" id="mainContent">
-                <!-- Content will be loaded dynamically -->
+            <article class="main-content">
+                <h1>KenesLab 기술 블로그에 오신 것을 환영합니다</h1>
+                <div class="post-meta">
+                    <span class="date">Welcome to KenesLab Blog</span>
+                </div>
+
+                <div class="post-content">
+                    <p>케네스랩의 기술 블로그입니다. 웹 개발, 프레임워크, 프로그래밍에 대한 인사이트를 공유합니다.</p>
+
+                    <h2>최신 글</h2>
+                    <div class="posts-preview">
+                        <div class="post-preview-item">
+                            <h3><a href="web-components.html">웹컴포넌트 기술에 대해서</a></h3>
+                            <p class="post-meta">
+                                <span class="date">2025년 10월 22일</span>
+                                <span class="author">KenesLab</span>
+                            </p>
+                            <p>웹컴포넌트(Web Components) 기술의 핵심 개념과 활용 방법에 대해 알아봅니다. Shadow DOM, Custom Elements, HTML Templates 등을 설명합니다.</p>
+                            <a href="web-components.html" class="read-more">자세히 보기 →</a>
+                        </div>
+
+                        <div class="post-preview-item">
+                            <h3><a href="shakeflat.html">웹개발 프레임워크 shakeFlat 소개</a></h3>
+                            <p class="post-meta">
+                                <span class="date">2025년 10월 9일</span>
+                                <span class="author">KenesLab</span>
+                            </p>
+                            <p>케네스랩의 자체 개발 웹 프레임워크 shakeFlat을 소개합니다. 실용주의와 심플함을 추구하는 Admin/ERP 개발에 특화된 프레임워크입니다.</p>
+                            <a href="shakeflat.html" class="read-more">자세히 보기 →</a>
+                        </div>
+                    </div>
+                </div>
             </article>
 
             <!-- Sidebar -->
@@ -74,8 +124,6 @@
 
     <!-- Web Components -->
     <script src="js/analytics.js"></script>
-    <script src="js/seo-manager.js"></script>
-    <script src="js/content-loader.js"></script>
     <script src="js/components/header.js"></script>
     <script src="js/components/footer.js"></script>
     <script src="js/components/company-info.js"></script>

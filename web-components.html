@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹컴포넌트 기술에 대해서 - KenesLab Blog</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="웹컴포넌트(Web Components) 기술의 핵심 개념과 활용 방법에 대해 알아봅니다. Shadow DOM, Custom Elements, HTML Templates 등을 설명합니다.">
+    <meta name="keywords" content="웹컴포넌트, Web Components, Shadow DOM, Custom Elements, HTML Templates, 프론트엔드">
+    <meta name="author" content="KenesLab">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="웹컴포넌트 기술에 대해서">
+    <meta property="og:description" content="웹컴포넌트(Web Components) 기술의 핵심 개념과 활용 방법에 대해 알아봅니다. Shadow DOM, Custom Elements, HTML Templates 등을 설명합니다.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://keneslab.github.io/web-components.html">
+    <meta property="og:image" content="https://keneslab.github.io/images/web-components-og.jpg">
+    <meta property="og:site_name" content="KenesLab Blog">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="article:published_time" content="2025-10-22">
+    <meta property="article:author" content="KenesLab">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="웹컴포넌트 기술에 대해서">
+    <meta name="twitter:description" content="웹컴포넌트(Web Components) 기술의 핵심 개념과 활용 방법에 대해 알아봅니다. Shadow DOM, Custom Elements, HTML Templates 등을 설명합니다.">
+    <meta name="twitter:image" content="https://keneslab.github.io/images/web-components-og.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://keneslab.github.io/web-components.html">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "웹컴포넌트 기술에 대해서",
+        "description": "웹컴포넌트(Web Components) 기술의 핵심 개념과 활용 방법에 대해 알아봅니다. Shadow DOM, Custom Elements, HTML Templates 등을 설명합니다.",
+        "image": "https://keneslab.github.io/images/web-components-og.jpg",
+        "datePublished": "2025-10-22",
+        "dateModified": "2025-10-23",
+        "author": {
+            "@type": "Organization",
+            "name": "KenesLab",
+            "url": "https://keneslab.github.io"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "KenesLab Blog",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://keneslab.github.io/images/logo.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://keneslab.github.io/web-components.html"
+        }
+    }
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TL8ZQ3G6');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TL8ZQ3G6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Header Component -->
+    <blog-header></blog-header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="content-wrapper">
+            <!-- Article Section -->
+            <article class="main-content">
+                웹 컴포넌트...
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Company Info Component -->
+                <company-info></company-info>
+
+                <!-- Contact Component -->
+                <contact-section></contact-section>
+
+                <!-- Recent Posts -->
+                <recent-posts></recent-posts>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer Component -->
+    <blog-footer></blog-footer>
+
+    <!-- Web Components -->
+    <script src="js/components/header.js"></script>
+    <script src="js/components/footer.js"></script>
+    <script src="js/components/company-info.js"></script>
+    <script src="js/components/contact-section.js"></script>
+    <script src="js/components/recent-posts.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>

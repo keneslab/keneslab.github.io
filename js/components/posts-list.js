@@ -16,7 +16,7 @@ class PostsList extends HTMLElement {
 
     async loadPosts() {
         try {
-            const response = await fetch('contents/posts-metadata.json');
+            const response = await fetch('workspace/contents/posts-metadata.json');
             if (!response.ok) {
                 throw new Error('Failed to load posts metadata');
             }
@@ -54,7 +54,7 @@ class PostsList extends HTMLElement {
         const currentPosts = this.getCurrentPagePosts();
 
         const postsHTML = currentPosts.map(post => {
-            const url = post.route ? `/${post.route}` : '#';
+            const url = post.route ? `/${post.route}.html` : '#';
             return `
                 <div class="post-item">
                     <h3 class="post-title">

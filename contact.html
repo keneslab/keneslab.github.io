@@ -4,6 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>문의하기 - KenesLab Blog</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="케네스랩에 프로젝트 문의, 협업 제안, 기술 상담을 남겨주세요. 성심껏 답변 드리겠습니다.">
+    <meta name="keywords" content="케네스랩, 문의, 연락처, 프로젝트문의, 협업제안, 기술상담">
+    <meta name="author" content="KenesLab">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="문의하기 - KenesLab Blog">
+    <meta property="og:description" content="케네스랩에 프로젝트 문의, 협업 제안, 기술 상담을 남겨주세요. 성심껏 답변 드리겠습니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://keneslab.github.io/contact.html">
+    <meta property="og:image" content="https://keneslab.github.io/images/og-default.jpg">
+    <meta property="og:site_name" content="KenesLab Blog">
+    <meta property="og:locale" content="ko_KR">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="문의하기 - KenesLab Blog">
+    <meta name="twitter:description" content="케네스랩에 프로젝트 문의, 협업 제안, 기술 상담을 남겨주세요. 성심껏 답변 드리겠습니다.">
+    <meta name="twitter:image" content="https://keneslab.github.io/images/og-default.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://keneslab.github.io/contact.html">
+
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Google Tag Manager -->
@@ -156,9 +180,8 @@
             const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbytKXHre4hsk3Xr6LDTaNZN0t3S8dL_TYPA_2d-1Gj56MzTOrM5YVtKDlETYu0dptN3/exec';
             const SUBMISSION_TIMEOUT = 10000;
 
-            const form = document.querySelector('shake-form');
-            const spinnerOverlay = document.getElementById('spinner-overlay');
-
+            let form = null;
+            let spinnerOverlay = null;
             let submissionTimeout = null;
 
             const formFields = [
@@ -167,6 +190,27 @@
                 { name: 'phone', label: '전화번호', type: 'tel', required: false, width: '50%' },
                 { name: 'message', label: '문의 내용', type: 'textarea', required: true, style: 'height:8rem' }
             ];
+
+            function initializeForm() {
+                form = document.querySelector('shake-form');
+                spinnerOverlay = document.getElementById('spinner-overlay');
+
+                if (!form) {
+                    console.error('shake-form element not found');
+                    return;
+                }
+
+                form.setFields(formFields);
+                form.addEventListener('formsubmit', (event) => submitFormData(event.detail));
+            }
+
+            // DOMContentLoaded 또는 window.onload에서 초기화
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initializeForm);
+            } else {
+                // DOM이 이미 로드된 경우
+                initializeForm();
+            }
 
             function completeSubmission(success, message) {
                 spinnerOverlay.classList.remove('active');
@@ -251,9 +295,6 @@
                     completeSubmission(false, '서버 응답 시간이 초과되었습니다. 다시 시도해주세요.');
                 }, SUBMISSION_TIMEOUT);
             }
-
-            form.setFields(formFields);
-            form.addEventListener('formsubmit', (event) => submitFormData(event.detail));
         })();
     </script>
 </body>

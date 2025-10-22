@@ -14,7 +14,7 @@ class BlogHeader extends HTMLElement {
             <header class="header">
                 <nav class="nav-container">
                     <div class="logo">
-                        <a href="/" data-route="shakeflat">
+                        <a href="/">
                             <span class="logo-icon"><img src="/images/keneslab.png" alt="KenesLab Logo"></span>
                             <span class="logo-text">KenesLab</span>
                         </a>
@@ -27,7 +27,8 @@ class BlogHeader extends HTMLElement {
                     </button>
 
                     <ul class="nav-menu">
-                        <li><a href="/shakeflat" data-route="shakeflat" class="nav-link">홈</a></li>
+                        <li><a href="/" class="nav-link">홈</a></li>
+                        <li><a href="/posts.html" class="nav-link">글목록</a></li>
                         <li><a href="/about.html" class="nav-link">회사 소개</a></li>
                         <li><a href="/contact.html" class="nav-link">문의하기</a></li>
                     </ul>
