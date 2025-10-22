@@ -12,6 +12,7 @@
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
+const { getAssetVersions } = require('./update-asset-versions.js');
 
 // Configuration
 const METADATA_PATH = './posts-metadata.json';
@@ -219,6 +220,13 @@ function createTemplate(post, content) {
     const postUrl = `${baseUrl}/${post.route}.html`;
     const imageUrl = post.image ? `${baseUrl}/${post.image}` : `${baseUrl}/images/og-default.jpg`;
 
+    // Load asset versions for cache busting
+    const assetVersions = getAssetVersions();
+    const getVersionedAsset = (assetPath) => {
+        const version = assetVersions[assetPath] || '1.0.0';
+        return `${assetPath}?v=${version}`;
+    };
+
     return `<!DOCTYPE html>
 <html lang="ko" data-theme="dark">
 <head>
@@ -252,7 +260,7 @@ function createTemplate(post, content) {
     <!-- Canonical URL -->
     <link rel="canonical" href="${postUrl}">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${getVersionedAsset('css/style.css')}">
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -326,13 +334,13 @@ function createTemplate(post, content) {
     <blog-footer></blog-footer>
 
     <!-- Web Components -->
-    <script src="js/analytics.js"></script>
-    <script src="js/components/header.js"></script>
-    <script src="js/components/footer.js"></script>
-    <script src="js/components/company-info.js"></script>
-    <script src="js/components/contact-section.js"></script>
-    <script src="js/components/recent-posts.js"></script>
-    <script src="js/theme.js"></script>
+    <script src="${getVersionedAsset('js/analytics.js')}"></script>
+    <script src="${getVersionedAsset('js/components/header.js')}"></script>
+    <script src="${getVersionedAsset('js/components/footer.js')}"></script>
+    <script src="${getVersionedAsset('js/components/company-info.js')}"></script>
+    <script src="${getVersionedAsset('js/components/contact-section.js')}"></script>
+    <script src="${getVersionedAsset('js/components/recent-posts.js')}"></script>
+    <script src="${getVersionedAsset('js/theme.js')}"></script>
 </body>
 </html>`;
 }
