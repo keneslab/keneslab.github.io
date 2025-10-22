@@ -79,8 +79,8 @@ class RecentPosts extends HTMLElement {
             }
 
             .recent-post-item {
-                margin-bottom: 1rem;
-                padding-bottom: 1rem;
+                margin-bottom: 0.5rem;
+                padding-bottom: 0.5rem;
                 border-bottom: 1px solid var(--border-color);
             }
 
@@ -118,7 +118,7 @@ class RecentPosts extends HTMLElement {
             }
 
             .view-all-posts {
-                margin-top: 1.5rem;
+                margin-top: 1rem;
                 padding-top: 1rem;
                 border-top: 1px solid var(--border-color);
                 text-align: center;

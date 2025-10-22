@@ -162,6 +162,61 @@ recent-posts {
     font-size: 0.95rem;
 }
 
+/* ===== Posts Preview ===== */
+.posts-preview {
+    margin-top: 2rem;
+}
+
+.post-preview-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.post-preview-item:first-child {
+    padding-top: 0;
+}
+
+.post-preview-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.post-preview-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-preview-item h3 a {
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.post-preview-item h3 a:hover {
+    color: var(--accent-color);
+}
+
+.post-preview-item .post-meta {
+    margin-bottom: 1rem;
+}
+
+.post-preview-item p {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    color: var(--accent-color);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.read-more:hover {
+    color: var(--accent-hover);
+    transform: translateX(4px);
+}
+
 /* ===== Buttons ===== */
 .btn-primary {
     display: inline-block;
