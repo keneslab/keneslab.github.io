@@ -98,14 +98,14 @@ git push
 **스크립트**: `workspace/bin/generate-static-pages.js`
 
 **자동 생성 요소**:
-- ✅ HTML5 문서 구조 (DOCTYPE, html, head, body)
-- ✅ SEO 메타 태그 (description, keywords, author)
-- ✅ Open Graph 태그 (소셜 미디어 공유)
-- ✅ Twitter Card 태그
-- ✅ Canonical URL
-- ✅ JSON-LD 구조화된 데이터 (Schema.org BlogPosting)
-- ✅ Google Tag Manager 통합
-- ✅ 공통 헤더/푸터 컴포넌트
+- HTML5 문서 구조 (DOCTYPE, html, head, body)
+- SEO 메타 태그 (description, keywords, author)
+- Open Graph 태그 (소셜 미디어 공유)
+- Twitter Card 태그
+- Canonical URL
+- JSON-LD 구조화된 데이터 (Schema.org BlogPosting)
+- Google Tag Manager 통합
+- 공통 헤더/푸터 컴포넌트
 
 **특징**:
 - 본문만 작성하면 완전한 페이지가 자동 생성
@@ -221,6 +221,10 @@ Google 검색 결과 최적화를 위한 Schema.org 데이터:
 - **Node.js**: 자동화 스크립트
 - **Google Tag Manager**: 분석 및 추적
 - **Schema.org**: 구조화된 데이터
+
+## 운영 블로그 주소
+
+- https://keneslab.github.io/
 
 ## 문의
 
