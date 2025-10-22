@@ -224,7 +224,8 @@ function createTemplate(post, content) {
     const assetVersions = getAssetVersions();
     const getVersionedAsset = (assetPath) => {
         const version = assetVersions[assetPath] || '1.0.0';
-        return `${assetPath}?v=${version}`;
+        // articles 폴더에 있으므로 상대 경로로 ../ 추가
+        return `../${assetPath}?v=${version}`;
     };
 
     return `<!DOCTYPE html>
