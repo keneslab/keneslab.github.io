@@ -54,7 +54,7 @@ class PostsList extends HTMLElement {
         const currentPosts = this.getCurrentPagePosts();
 
         const postsHTML = currentPosts.map(post => {
-            const url = post.route ? `index.html#${post.route}` : '#';
+            const url = post.route ? `/${post.route}` : '#';
             return `
                 <div class="post-item">
                     <h3 class="post-title">

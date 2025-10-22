@@ -6,11 +6,19 @@
     <title>회사 소개 - KenesLab Blog</title>
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XD3X145PND"></script>
-    <script src="js/analytics.js"></script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TL8ZQ3G6');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TL8ZQ3G6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- Header Component -->
     <blog-header></blog-header>
 
@@ -96,6 +104,7 @@
     <blog-footer></blog-footer>
 
     <!-- Web Components -->
+    <script src="js/analytics.js"></script>
     <script src="js/components/header.js"></script>
     <script src="js/components/footer.js"></script>
     <script src="js/components/recent-posts.js"></script>
@@ -117,6 +126,15 @@
                     navigator.clipboard.writeText(email).then(function() {
                         // 복사 성공 메시지 표시
                         copyMessage.style.opacity = '1';
+
+                        // Track email copy event
+                        if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+                            window.analytics.trackEvent('email_copy', {
+                                'event_category': 'engagement',
+                                'event_label': 'about_page',
+                                'value': email
+                            });
+                        }
 
                         setTimeout(function() {
                             copyMessage.style.opacity = '0';

@@ -5,29 +5,8 @@ class BlogHeader extends HTMLElement {
     }
 
     connectedCallback() {
-        this.loadGoogleAnalytics();
         this.render();
         this.attachEventListeners();
-    }
-
-    loadGoogleAnalytics() {
-        // Google Analytics 스크립트가 이미 로드되었는지 확인
-        if (!window.gaLoaded) {
-            // gtag.js 스크립트 동적 로드
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XD3X145PND';
-            document.head.appendChild(script);
-
-            // Google Analytics 초기화
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
-            gtag('js', new Date());
-            gtag('config', 'G-XD3X145PND');
-
-            window.gaLoaded = true;
-        }
     }
 
     render() {

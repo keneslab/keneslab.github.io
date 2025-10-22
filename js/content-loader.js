@@ -152,6 +152,11 @@ class ContentRouter {
 
                 // Update SEO meta tags
                 this.updateSEO(routeName);
+
+                // Track page view with Analytics
+                if (window.analytics && typeof window.analytics.trackPageView === 'function') {
+                    window.analytics.trackPageView(window.location.pathname);
+                }
             } else {
                 this.mainContent.innerHTML = '<p>콘텐츠를 불러올 수 없습니다.</p>';
             }

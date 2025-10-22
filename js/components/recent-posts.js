@@ -26,7 +26,7 @@ class RecentPosts extends HTMLElement {
             this.posts = allPosts.slice(0, this.maxPosts).map(post => ({
                 title: post.title,
                 date: post.date,
-                url: post.route ? `index.html#${post.route}` : '#',
+                url: post.route ? `/${post.route}` : '#',
                 route: post.route
             }));
         } catch (error) {
