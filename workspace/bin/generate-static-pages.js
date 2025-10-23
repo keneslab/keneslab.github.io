@@ -261,6 +261,9 @@ function createTemplate(post, content) {
     <!-- Canonical URL -->
     <link rel="canonical" href="${postUrl}">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
     <link rel="stylesheet" href="${getVersionedAsset('css/style.css')}">
 
     <!-- Structured Data (JSON-LD) -->
