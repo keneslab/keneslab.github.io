@@ -342,6 +342,7 @@ function createTemplate(post, content) {
     <script src="${getVersionedAsset('js/components/contact-section.js')}"></script>
     <script src="${getVersionedAsset('js/components/recent-posts.js')}"></script>
     <script src="${getVersionedAsset('js/theme.js')}"></script>
+    <script src="${getVersionedAsset('js/syntax-highlighter.js')}"></script>
 </body>
 </html>`;
 }
