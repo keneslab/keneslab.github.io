@@ -68,7 +68,7 @@ class RecentPosts extends HTMLElement {
                     ${postsHTML}
                 </ul>
                 <div class="view-all-posts">
-                    <a href="posts.html" class="view-all-link">전체 목록 보기 →</a>
+                    <a href="/posts.html" class="view-all-link">전체 목록 보기 →</a>
                 </div>
             </div>
         `;

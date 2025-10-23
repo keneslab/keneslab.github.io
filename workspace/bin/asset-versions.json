@@ -1,11 +1,11 @@
 {
-    "css/style.css": "2.0.3",
-    "js/analytics.js": "1.0.4",
-    "js/theme.js": "1.0.4",
-    "js/components/header.js": "1.0.4",
-    "js/components/footer.js": "1.0.4",
-    "js/components/company-info.js": "1.0.4",
-    "js/components/contact-section.js": "1.0.4",
-    "js/components/recent-posts.js": "1.0.4",
-    "js/components/posts-list.js": "1.0.4"
+    "css/style.css": "2.0.4",
+    "js/analytics.js": "1.0.5",
+    "js/theme.js": "1.0.5",
+    "js/components/header.js": "1.0.5",
+    "js/components/footer.js": "1.0.5",
+    "js/components/company-info.js": "1.0.5",
+    "js/components/contact-section.js": "1.0.5",
+    "js/components/recent-posts.js": "1.0.5",
+    "js/components/posts-list.js": "1.0.5"
 }
