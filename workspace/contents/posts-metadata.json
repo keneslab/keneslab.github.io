@@ -2,7 +2,7 @@
     {
         "title": "웹컴포넌트 기술에 대해서",
         "date": "2025-10-22",
-        "dateModified": "2025-10-23",
+        "dateModified": "2025-11-18",
         "filename": "web-components.html",
         "route": "web-components",
         "description": "웹컴포넌트(Web Components) 기술의 핵심 개념과 활용 방법에 대해 알아봅니다. Shadow DOM, Custom Elements, HTML Templates 등을 설명합니다.",
@@ -13,12 +13,23 @@
     {
         "title": "웹개발 프레임워크 shakeFlat 소개",
         "date": "2025-10-09",
-        "dateModified": "2025-10-23",
+        "dateModified": "2025-11-18",
         "filename": "shakeflat.html",
         "route": "shakeflat",
         "description": "케네스랩의 자체 개발 웹 프레임워크 shakeFlat을 소개합니다. 실용주의와 심플함을 추구하는 Admin/ERP 개발에 특화된 프레임워크입니다.",
         "keywords": "shakeFlat, 웹프레임워크, PHP, Admin, ERP, DataTables, 케네스랩",
         "author": "KenesLab",
         "image": "images/shakeflat-og.jpg"
+    },
+    {
+        "filename": "ai-and-developer.html",
+        "route": "ai-and-developer",
+        "author": "KenesLab",
+        "title": "AI 그리고 개발자의 미래",
+        "date": "2025-11-18",
+        "description": "구글의 딥마인드 알파고가 이세돌 9단에게 역사적인 승리를 거둔 지 벌써 10년이 되었습니다. 당시에는 먼 미래의 일처럼 느껴졌던 AI가 이제는 저희 같은 고객사들이 매일 접하는 기술이 되었습니다. 특히 개발 분야에서 AI의 등장은 저희가 프로젝트를 의뢰하고 바라보는 관점 자체를 바...",
+        "dateModified": "2025-11-18",
+        "keywords": "AI, 개발자, 딥마인드, 구글, 코파일럿, 제미나이, chatGPT",
+        "image": "images/ai-and-developer-og.jpg"
     }
 ]
