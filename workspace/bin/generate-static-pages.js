@@ -421,18 +421,27 @@ function syncMetadata() {
     }
 }
 
+// Helper function to get file modification date
+function getFileModDate(filePath) {
+    if (fs.existsSync(filePath)) {
+        const stats = fs.statSync(filePath);
+        return stats.mtime.toISOString().split('T')[0];
+    }
+    return new Date().toISOString().split('T')[0];
+}
+
 // Generate sitemap.xml
 function generateSitemap(posts) {
-    console.log('\n� Generating sitemap.xml...');
+    console.log('\n🗺️ Generating sitemap.xml...');
 
     const today = new Date().toISOString().split('T')[0];
 
     // Static pages configuration
     const staticPages = [
-        { url: '', priority: '1.0', changefreq: 'weekly' },
-        { url: 'posts.html', priority: '0.9', changefreq: 'weekly' },
-        { url: 'about.html', priority: '0.7', changefreq: 'monthly' },
-        { url: 'contact.html', priority: '0.6', changefreq: 'monthly' }
+        { url: '', priority: '1.0', changefreq: 'weekly', file: 'index.html' },
+        { url: 'posts.html', priority: '0.9', changefreq: 'weekly', file: 'posts.html' },
+        { url: 'about.html', priority: '0.7', changefreq: 'monthly', file: 'about.html' },
+        { url: 'contact.html', priority: '0.6', changefreq: 'monthly', file: 'contact.html' }
     ];
 
     let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
@@ -442,39 +451,26 @@ function generateSitemap(posts) {
         xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+`;
 
-    <!-- Homepage -->
+    // Add static pages to sitemap
+    staticPages.forEach(page => {
+        const pagePath = page.file;
+        const lastmod = getFileModDate(pagePath);
+        const loc = page.url ? `${BASE_URL}/${page.url}` : `${BASE_URL}/`;
+
+        sitemapContent += `
+    <!-- ${page.file} -->
     <url>
-        <loc>${BASE_URL}/</loc>
-        <lastmod>${today}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
+        <loc>${loc}</loc>
+        <lastmod>${lastmod}</lastmod>
+        <changefreq>${page.changefreq}</changefreq>
+        <priority>${page.priority}</priority>
     </url>
+`;
+    });
 
-    <!-- Posts Page -->
-    <url>
-        <loc>${BASE_URL}/posts.html</loc>
-        <lastmod>${today}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- About Page -->
-    <url>
-        <loc>${BASE_URL}/about.html</loc>
-        <lastmod>${today}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Contact Page -->
-    <url>
-        <loc>${BASE_URL}/contact.html</loc>
-        <lastmod>${today}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
+    sitemapContent += `
     <!-- Blog Posts -->
 `;
 
@@ -495,7 +491,7 @@ function generateSitemap(posts) {
 `;
 
     // Write sitemap to file
-    fs.writeFileSync(SITEMAP_PATH, sitemapContent, 'utf8');
+    fs.writeFileSync(SITEMAP_PATH, sitemapContent.trim(), 'utf8');
     console.log(`✓ sitemap.xml generated successfully!`);
     console.log(`  - Total URLs: ${staticPages.length + posts.length}`);
     console.log(`  - Static pages: ${staticPages.length}`);

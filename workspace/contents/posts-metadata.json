@@ -13,7 +13,7 @@
     {
         "title": "웹컴포넌트 기술에 대해서",
         "date": "2025-10-22",
-        "dateModified": "2025-11-18",
+        "dateModified": "2025-10-22",
         "filename": "web-components.html",
         "route": "web-components",
         "description": "웹컴포넌트(Web Components) 기술의 핵심 개념과 활용 방법에 대해 알아봅니다. Shadow DOM, Custom Elements, HTML Templates 등을 설명합니다.",
@@ -24,7 +24,7 @@
     {
         "title": "웹개발 프레임워크 shakeFlat 소개",
         "date": "2025-10-09",
-        "dateModified": "2025-11-18",
+        "dateModified": "2025-10-09",
         "filename": "shakeflat.html",
         "route": "shakeflat",
         "description": "케네스랩의 자체 개발 웹 프레임워크 shakeFlat을 소개합니다. 실용주의와 심플함을 추구하는 Admin/ERP 개발에 특화된 프레임워크입니다.",
