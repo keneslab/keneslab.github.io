@@ -9,7 +9,7 @@
     <!-- index.html -->
     <url>
         <loc>https://keneslab.github.io/</loc>
-        <lastmod>2026-01-23</lastmod>
+        <lastmod>2026-04-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -41,28 +41,35 @@
     <!-- Blog Posts -->
     <url>
         <loc>https://keneslab.github.io/articles/ai-and-developer.html</loc>
-        <lastmod>2026-01-23</lastmod>
+        <lastmod>2026-04-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://keneslab.github.io/articles/web-components.html</loc>
-        <lastmod>2026-01-23</lastmod>
+        <lastmod>2026-04-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://keneslab.github.io/articles/shakeflat.html</loc>
-        <lastmod>2026-01-23</lastmod>
+        <lastmod>2026-04-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://keneslab.github.io/articles/unisafety.html</loc>
-        <lastmod>2026-01-23</lastmod>
+        <lastmod>2026-04-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://keneslab.github.io/articles/developer-hiring-in-ai-era.html</loc>
+        <lastmod>2026-04-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
